@@ -4,6 +4,8 @@
 */
 var doubler = function(number) {
 
+ return number * 2;
+
 }
 
 /*
@@ -11,6 +13,12 @@ var doubler = function(number) {
   It should return an array, with each number in the array being doubled.
 */
 var arrayDoubler = function(array) {
+
+  for (var i = 0; i < array.length; i++) {
+      array[i] = doubler(array[i]);
+  }
+
+  return array;
 
 }
 
@@ -20,6 +28,8 @@ var arrayDoubler = function(array) {
 */
 var divide = function(numerator, denominator) {
 
+  return Math.round(numerator/denominator);
+
 }
 
 /*
@@ -27,6 +37,14 @@ var divide = function(numerator, denominator) {
   It should return an array, with each member of the array being divided by the parameter number.
 */
 var arrayDivide = function(array, denominator) {
+
+
+  for (var i = 0; i < array.length; i++) {
+      array[i] = array[i] / denominator;
+  }
+
+  return array;
+
 
 }
 
@@ -36,6 +54,8 @@ var arrayDivide = function(array, denominator) {
 */
 var sum = function(a, b) {
 
+    return a + b;
+
 }
 
 /*
@@ -44,6 +64,14 @@ var sum = function(a, b) {
 */
 var arraySum = function(array) {
 
+  var total = 0;
+
+  for (var i = 0; i < array.length; i++) {
+      total = total + array[i];
+  }
+
+  return total;
+
 }
 
 /*
@@ -51,6 +79,11 @@ var arraySum = function(array) {
   It should return the lower of the two numbers.
 */
 var minimum = function(a, b) {
+
+  if (a < b) {
+    return a;
+  }
+  return b;
 
 }
 
@@ -61,23 +94,67 @@ var minimum = function(a, b) {
 */
 var arrayMinimum = function(array) {
 
+  if (array.length === 0) {
+    return undefined;
+  }
+
+   var min = 5;
+
+  for (var i = 0; i < array.length; i++) {
+
+    currentMin = minimum(array[i], min);
+    min = currentMin;
+
+  }
+
+  return min;
+
 }
 
 /*
   This function should accept a string as a parameter.
   It should return true if the string ends with a period.
   Otherwise, it should return false.
-*/
-var endsInPeriod = function(string) {
+*/ 
 
-}
+
 
 /*
-  This functions hould accept an array of strings as a parameter.
+var endsInPeriod = function(string) {
+
+  if (string.charAt(string.length -1) === ".") {
+    return true;
+  }
+  return false;
+
+} */    //in case kyle doesn't want us to use black magic:
+
+var endsInPeriod = function(string) {
+
+      if (string[string.length -1] === ".") {
+        return true;
+      }
+      return false;
+    }
+
+/*
+  This function should accept an array of strings as a parameter.
   It should return an array, consisting of only the strings 
     from the original array which end with a period.
 */
 var arrayEndsInPeriod = function(array) {
+
+    var newArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+
+      if (endsInPeriod(array[i])) {
+        newArray.push(array[i]); 
+      }
+
+  }
+  return newArray;
+
 
 }
 
@@ -88,6 +165,10 @@ var arrayEndsInPeriod = function(array) {
 */
 var multiple3 = function(number) {
 
+  if (number % 3 === 0) {
+    return true;
+  }
+  return false;
 }
 
 /*
@@ -95,7 +176,22 @@ var multiple3 = function(number) {
   It should return an array, consisting of only the numbers
     from the original array which are multiples of 3.
 */
-var arrayMultiple3 = function(number) {
+var arrayMultiple3 = function(array) {
+
+  var newArray = [];
+
+
+    for (var i = 0; i < array.length; i++) {
+
+      if (multiple3(array[i])) {
+        newArray.push(array[i]); 
+      }
+
+  }
+  return newArray;
+
+
+
 
 }
 
