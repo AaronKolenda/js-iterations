@@ -33,7 +33,7 @@ describe("Array", function(){
     it("should have a number divide function", function(){
 
       expect(divide(6, 3)).to.equal(2);
-      expect(divide(3.3, 1.1)).to.equal(3);
+      expect(divide(3, 1)).to.equal(3);
       expect(divide(5, 1)).to.equal(5);
 
     });
@@ -110,7 +110,7 @@ describe("Array", function(){
 
   describe("Multiple of 3", function(){
 
-    it("should have a string ends in period function", function(){
+    it("should have a multiple of 3 function", function(){
 
       expect(multiple3(20)).to.equal(false);
       expect(multiple3(21)).to.equal(true);
@@ -118,7 +118,7 @@ describe("Array", function(){
 
     });
 
-    it("should have an array ends in period filter function", function(){
+    it("should have an array multiple of 3 filter function", function(){
 
       expect(arrayMultiple3([5, 10, 15, 20, 25, 30])).to.deep.equal([15, 30]);
       expect(arrayMultiple3([3, 6, 9, 12])).to.deep.equal([3, 6, 9, 12]);

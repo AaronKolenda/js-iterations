@@ -136,6 +136,8 @@ var endsInPeriod = function(string) {
       }
       return false;
     }
+  
+}
 
 /*
   This function should accept an array of strings as a parameter.
@@ -169,6 +171,7 @@ var multiple3 = function(number) {
     return true;
   }
   return false;
+
 }
 
 /*
@@ -189,8 +192,6 @@ var arrayMultiple3 = function(array) {
 
   }
   return newArray;
-
-
 
 
 }
