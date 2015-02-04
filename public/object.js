@@ -6,12 +6,7 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
-
-  var obj = {};
-
-  for (var i = 0; i < array.length; i++) {
-
-  };
+ 
 
 }
 
@@ -22,15 +17,19 @@ var frequency = function(array) {
 
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
-var unique = function(array) {
+var unique = function(arr) {
 
 }
+
+
 
 /*
   This function should accept a number as a parameter.
   It should return the value of the number times 3.
 */
-var triple = function(number) {
+var tripler = function(number) {
+
+    return number*3;
 
 }
 
@@ -38,7 +37,13 @@ var triple = function(number) {
   This function should accept an object as a parameter.
   It should return the object with all of its values tripled.
 */
-var objectTriple = function(number) {
+var objectTripler = function(obj) {
+
+  for (var key in obj) {
+    obj[key] = tripler(obj[key]);
+
+  }
+  return obj;
 
 }
 
@@ -49,7 +54,20 @@ var objectTriple = function(number) {
 
   For instance, ({ a: 1, b: 2 } and { b: 9, c: 3 }) would produce { a: 1, b: 2, c: 3 }
 */
+
 var extend = function(left, right) {
+
+    var newObj = {};
+
+    for (var key in right) { 
+      newObj[key] = right[key]; 
+    }
+
+    for (var key in left) { 
+      newObj[key] = left[key]; 
+    }
+
+    return newObj;
 
 }
 
@@ -60,6 +78,27 @@ var extend = function(left, right) {
 
   For instance, [{a: 1, b: 2}, {a: 3, c: 4}] for "a" would produce [1, 3]
 */
-var pluck = function(object, string) {
+var pluck = function(array, string) {
+
+  var newArray = [];
+
+  for (var i=0; i < array.length; i++) {
+
+
+      for (var key in array[i]) { 
+        
+        if (string === array[i][key]) {
+
+          console.log("in if, array[i][key] is " + array[i]["key"]);
+
+          newArray.push(array[i][string]);
+        }
+      
+      }
+
+
+  }
+  return newArray;
+
 
 }

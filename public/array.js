@@ -135,7 +135,7 @@ var endsInPeriod = function(string) {
         return true;
       }
       return false;
-    }
+
   
 }
 
@@ -154,8 +154,10 @@ var arrayEndsInPeriod = function(array) {
         newArray.push(array[i]); 
       }
 
-  }
-  return newArray;
+    }
+    
+    return newArray;
+
 
 
 }
