@@ -100,9 +100,9 @@ describe("Array", function(){
 
     it("should have an array ends in period filter function", function(){
 
-      expect(arrayEndsInPeriod(["yep.", "nope", "ok.", "nah"])).to.equal(["yep.", "ok."]);
-      expect(arrayEndsInPeriod(["you", "are", "correct."])).to.equal(["correct."]);
-      expect(arrayEndsInPeriod([])).to.equal([]);
+      expect(arrayEndsInPeriod(["yep.", "nope", "ok.", "nah"])).to.deep.equal(["yep.", "ok."]);
+      expect(arrayEndsInPeriod(["you", "are", "correct."])).to.deep.equal(["correct."]);
+      expect(arrayEndsInPeriod([])).to.deep.equal([]);
 
     });
 
@@ -120,9 +120,9 @@ describe("Array", function(){
 
     it("should have an array ends in period filter function", function(){
 
-      expect(arrayMultiple3([5, 10, 15, 20, 25, 30])).to.equal([15, 30]);
-      expect(arrayMultiple3([3, 6, 9, 12])).to.equal([3, 6, 9, 12]);
-      expect(arrayMultiple3([])).to.equal([]);
+      expect(arrayMultiple3([5, 10, 15, 20, 25, 30])).to.deep.equal([15, 30]);
+      expect(arrayMultiple3([3, 6, 9, 12])).to.deep.equal([3, 6, 9, 12]);
+      expect(arrayMultiple3([])).to.deep.equal([]);
 
     });
 
