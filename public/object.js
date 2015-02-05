@@ -6,9 +6,26 @@
   For instance, [ "a", "b", "c", "b" ] would produce { "a": 1, "b": 2, "c": 1 }
 */
 var frequency = function(array) {
- 
+  var newArray = [];
+  var obj = {};
 
-}
+    for (i=0; i < array.length; i++) {
+    
+
+        if (newArray.indexOf(array[i]) === -1) {  
+          newArray.push(array[i]);
+          obj[array[i]] = 1;
+        }
+        else 
+          obj[array[i]] = obj[array[i]] + 1;
+
+    }
+
+      return obj;
+} 
+
+
+
 
 /*
   This function should accept an array as a parameter.
@@ -17,7 +34,23 @@ var frequency = function(array) {
 
   For instance, [ "a", "b", "c", "b" ] would produce [ "a", "b", "c" ].
 */
-var unique = function(arr) {
+var unique = function(array) {
+
+  var newArray = [];
+
+    for (i=0; i < array.length; i++) {
+    
+
+        if (newArray.indexOf(array[i]) === -1) {  
+          newArray.push(array[i]);
+          
+        }
+       
+
+    }
+
+      return newArray;
+
 
 }
 
@@ -87,7 +120,7 @@ var pluck = function(array, string) {
 
       for (var key in array[i]) { 
         
-        if (string === array[i][key]) {
+        if (string === array[i].key) {
 
           console.log("in if, array[i][key] is " + array[i]["key"]);
 
