@@ -110,28 +110,18 @@ var extend = function(left, right) {
     the named property in each object in the array.
 
   For instance, [{a: 1, b: 2}, {a: 3, c: 4}] for "a" would produce [1, 3]
+
 */
 var pluck = function(array, string) {
 
   var newArray = [];
 
-  for (var i=0; i < array.length; i++) {
-
-
-      for (var key in array[i]) { 
-        
-        if (string === array[i].key) {
-
-          console.log("in if, array[i][key] is " + array[i]["key"]);
-
-          newArray.push(array[i][string]);
-        }
-      
-      }
-
-
+  for (var i=0; i < array.length; i++)
+  {
+    newArray.push(array[i][string]);
   }
+
   return newArray;
 
-
 }
+
